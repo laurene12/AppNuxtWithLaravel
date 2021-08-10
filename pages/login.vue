@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <v-card class="pa-5">
+      <v-form>
+        <v-text-field
+          label="Email"
+          outlined
+          dense
+        />
+        <v-text-field
+          label="Password"
+          outlined
+          dense
+        />
+        <v-btn
+          color="success"
+          class="mr-4"
+        >
+          Connected
+        </v-btn>
+      </v-form>
+    </v-card>
+  </div>
+</template>
