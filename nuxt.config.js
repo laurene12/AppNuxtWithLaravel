@@ -46,11 +46,30 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+  auth: {
+    // Options
+    strategies: {
+      laravelJWT: {
+        provider: 'laravel/jwt',
+        url: 'localhost:8000/api',
+        endpoints: {
+        },
+        token: {
+          property: 'token',
+          maxAge: 60 * 60
+        },
+        refreshToken: {
+          maxAge: 20160 * 60
+        }
+      }
+    }
+  },
 
   // Add module configuration i18n
   i18n: {

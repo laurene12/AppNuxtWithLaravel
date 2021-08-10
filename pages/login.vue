@@ -52,7 +52,12 @@ export default {
   },
   methods: {
     onSubmit () {
-      alert('Form has been submitted!')
+      this.$auth.loginWith('laravelJWT', {
+        data: {
+          email: this.form.email,
+          password: this.form.password
+        }
+      })
     }
   }
 }
