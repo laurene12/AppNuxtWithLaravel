@@ -33,6 +33,13 @@
           </v-btn>
         </v-form>
       </ValidationObserver>
+
+      <nuxt-link :to="switchLocalePath('en')" class="mx-5">
+        English
+      </nuxt-link>
+      <nuxt-link :to="switchLocalePath('fr')">
+        Français
+      </nuxt-link>
     </v-card>
   </div>
 </template>
