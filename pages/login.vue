@@ -1,24 +1,59 @@
 <template>
   <div>
     <v-card class="pa-5">
-      <v-form>
-        <v-text-field
-          label="Email"
-          outlined
-          dense
-        />
-        <v-text-field
-          label="Password"
-          outlined
-          dense
-        />
-        <v-btn
-          color="success"
-          class="mr-4"
-        >
-          Connected
-        </v-btn>
-      </v-form>
+      <ValidationObserver v-slot="{ invalid }">
+        <v-form @submit.prevent="onSubmit">
+          <ValidationProvider v-slot="{ errors }" name="E-mail" rules="required|email">
+            <v-text-field
+              v-model="form.email"
+              label="Email"
+              outlined
+              dense
+            />
+            <span>{{ errors[0] }}</span>
+          </ValidationProvider>
+          <ValidationProvider v-slot="{ errors }" name="Password" rules="required|min:8|max:12">
+            <v-text-field
+              v-model="form.password"
+              label="Password"
+              outlined
+              type="password"
+              dense
+            />
+            <span>{{ errors[0] }}</span>
+          </ValidationProvider>
+
+          <v-btn
+            color="success"
+            class="mr-4"
+            type="submit"
+            :disabled="invalid"
+          >
+            Connected
+          </v-btn>
+        </v-form>
+      </ValidationObserver>
     </v-card>
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      form: {}
+    }
+  },
+  methods: {
+    onSubmit () {
+      alert('Form has been submitted!')
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+span {
+  display: block;
+  color:red
+}
+</style>
