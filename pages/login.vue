@@ -128,27 +128,26 @@
     </div>
   </v-container>
 </template>
-
 <script>
 export default {
-  props: {
-    title: {
-      type: String,
-      default: ''
-    }
-  },
+  auth: 'guest',
   data () {
     return {
-      inLogin: false,
-      form: {
-        name: '',
-        password: ''
-      }
+      form: {}
+    }
+  },
+  methods: {
+    onSubmit () {
+      this.$auth.loginWith('laravelJWT', {
+        data: {
+          email: this.form.email,
+          password: this.form.password
+        }
+      })
     }
   }
 }
 </script>
-
 <style lang="scss" scoped>
   .login-container{
     .card-login{
