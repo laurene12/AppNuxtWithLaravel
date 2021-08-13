@@ -201,7 +201,7 @@ export default {
       .forms{
         margin-top: 20px;
         .link-forgot{
-          color: #0f2ed8;
+          color: #1784a4 ;
           margin-top: 20px;
         }
       }
@@ -210,13 +210,13 @@ export default {
         justify-content: space-around;
         margin-top: 15px;
         .sign-in{
-          background-color: #0f2ed8 ;
-          border-color: #0f2ed8 ;
+          background-color: #1784a4  ;
+          border-color: #1784a4  ;
           color: white;
         }
         .sign-up{
-          color: #0f2ed8;
-          border-color: #0f2ed8;
+          color: #1784a4 ;
+          border-color: #1784a4 ;
           background-color: #ffffff;
         }
       }

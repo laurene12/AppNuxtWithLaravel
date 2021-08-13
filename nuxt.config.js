@@ -52,27 +52,27 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-  auth: {
-    // Options
-    strategies: {
-      laravelJWT: {
-        provider: 'laravel/jwt',
-        url: 'localhost:8000/api',
-        endpoints: {
-        },
-        token: {
-          property: 'token',
-          maxAge: 60 * 60
-        },
-        refreshToken: {
-          maxAge: 20160 * 60
-        }
-      }
-    }
-  },
-  router: {
-    middleware: ['auth']
-  },
+  // auth: {
+  //   // Options
+  //   strategies: {
+  //     laravelJWT: {
+  //       provider: 'laravel/jwt',
+  //       url: 'localhost:8000/api',
+  //       endpoints: {
+  //       },
+  //       token: {
+  //         property: 'token',
+  //         maxAge: 60 * 60
+  //       },
+  //       refreshToken: {
+  //         maxAge: 20160 * 60
+  //       }
+  //     }
+  //   }
+  // },
+  // router: {
+  //   middleware: ['auth']
+  // },
 
   // Add module configuration i18n
   i18n: {
