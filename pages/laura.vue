@@ -121,7 +121,7 @@
       <!-- End of form login -->
 
       <div class="copyright-text d-flex justify-center pt-10">
-        <p class="text-copyright">
+        <p class="text-gray-light-1 text-body-2">
           © All rights reserved 2021 - Laurène BITOTA
         </p>
       </div>
@@ -148,24 +148,8 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
   .login-container{
-    .card-login{
-      background-color: #ffffffe0 !important;
-    }
-     background:
-      linear-gradient(
-        rgba(20, 210, 238, 0.0),
-        rgba(5, 27, 104, 0.9)
-      ),
-      /* bottom, image */
-      url('~assets/images/jpeg/fonds_6.jpeg');
-
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
     small{
       color: red;
     }
@@ -230,15 +214,6 @@ export default {
         justify-content: center;
         align-items: center;
         margin-top: 20px;
-      }
-    }
-    .copyright-text{
-      .text-copyright{
-      color: white;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.25rem;
-      letter-spacing: 0.0178571429em ;
       }
     }
   }
