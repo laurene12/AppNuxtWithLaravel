@@ -4,7 +4,7 @@
       <AdminHeader class="px-8" @reRender="key++" />
       <div class="layout-body">
         <AdminNavigation />
-        <nuxt style="max-width: 1400px" class="mt-6 px-0  mx-auto" />
+        <nuxt class="page" />
       </div>
     </div>
   </v-app>
@@ -29,9 +29,16 @@ export default {
 <style lang="scss" scoped>
 .v-application, html{
   background-color: #cccccc66 ;
+  text-align: left;
   .layout-body{
     margin-top: 14px;
     display: flex;
+  }
+  .page{
+    text-align: left;
+    margin-top: 24px;
+    max-width: 1400px;
+    padding: 0px 30px;
   }
 }
 </style>
