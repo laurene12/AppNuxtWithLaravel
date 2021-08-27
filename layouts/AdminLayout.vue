@@ -36,9 +36,8 @@ export default {
   }
   .page{
     text-align: left;
-    margin-top: 24px;
-    max-width: 1400px;
-    padding: 0px 30px;
+    padding: 40px;
+    width: 100%;
   }
 }
 </style>

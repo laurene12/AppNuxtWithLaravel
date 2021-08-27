@@ -1,92 +1,67 @@
 <template>
-  <div>
-    sales graphics
-    <div id="chart">
-      <apexchart type="line" height="350" :options="chartOptions" :series="series" />
-    </div>
+  <div id="chart">
+    <apexchart type="area" height="350" :options="chartOptions" :series="series" />
   </div>
 </template>
 <script>
 export default {
+  name: 'DepartementSales',
   data () {
     return {
       series: [{
-        name: 'Session Duration',
-        data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
+        name: 'Computers',
+        data: [31, 40, 28, 51, 42, 109, 100, 50, 80]
       },
       {
-        name: 'Page Views',
-        data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
-      },
-      {
-        name: 'Total Visits',
-        data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
-      }
-      ],
+        name: 'Monitor',
+        data: [80, 32, 45, 50, 34, 100, 41, 100, 90]
+      }],
       chartOptions: {
         chart: {
           height: 350,
-          type: 'line',
-          zoom: {
-            enabled: false
+          type: 'area',
+          toolbar: {
+            show: false,
+            offsetX: 0,
+            offsetY: 0,
+            tools: {
+              download: true,
+              selection: false,
+              zoom: false,
+              zoomin: false,
+              zoomout: false,
+              pan: false,
+              reset: false,
+              customIcons: []
+            }
           }
         },
         dataLabels: {
           enabled: false
         },
         stroke: {
-          width: [5, 7, 5],
-          curve: 'straight',
-          dashArray: [0, 8, 5]
-        },
-        title: {
-          text: 'Page Statistics',
-          align: 'left'
-        },
-        legend: {
-          tooltipHoverFormatter (val, opts) {
-            return val + ' - ' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + ''
-          }
-        },
-        markers: {
-          size: 0,
-          hover: {
-            sizeOffset: 6
-          }
+          curve: 'smooth'
         },
         xaxis: {
-          categories: ['01 Jan', '02 Jan', '03 Jan', '04 Jan', '05 Jan', '06 Jan', '07 Jan', '08 Jan', '09 Jan',
-            '10 Jan', '11 Jan', '12 Jan'
-          ]
+          type: 'datetime',
+          categories: ['2018-09-19T00:00:00.000Z', '2018-09-19T01:30:00.000Z', '2018-09-19T02:30:00.000Z',
+            '2018-09-19T03:30:00.000Z', '2018-09-19T04:30:00.000Z', '2018-09-19T05:30:00.000Z',
+            '2018-09-19T06:30:00.000Z', '2018-09-19T07:30:00.000Z', '2018-09-19T09:30:00.000Z']
         },
         tooltip: {
-          y: [
-            {
-              title: {
-                formatter (val) {
-                  return val + ' (mins)'
-                }
-              }
-            },
-            {
-              title: {
-                formatter (val) {
-                  return val + ' per session'
-                }
-              }
-            },
-            {
-              title: {
-                formatter (val) {
-                  return val
-                }
-              }
-            }
-          ]
+          x: {
+            format: 'dd/MM/yy HH:mm'
+          }
         },
-        grid: {
-          borderColor: '#f1f1f1'
-        }
+        title: {
+          text: 'Sales',
+          style: {
+            fontSize: '20px',
+            fontWeight: 'bold',
+            color: '#1784a4 '
+          }
+        },
+        colors: ['#1784a4', '#22C0F0']
       }
     }
   }

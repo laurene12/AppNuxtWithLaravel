@@ -13,8 +13,8 @@
 
     <v-col class="params-user">
       <div class="d-flex">
-        <v-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg" />
+        <v-avatar color="blue">
+          <span class="white--text text-h5">LB</span>
         </v-avatar>
         <div class="user-name">
           <span class="name-user-logged">
